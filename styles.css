@@ -1,0 +1,16 @@
+html, body, div,p{
+    margin: 0;
+    padding: 0;
+    font-size: 16pt;
+    text-align: center;
+    height: 100vh;
+}
+
+h1{
+    line-height: 1.4;
+    font-size: 2em;
+    font-family: "Verdana", monospace;
+    margin-top: 50vh;
+    color: darkcyan;
+
+}

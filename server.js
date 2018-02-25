@@ -18,5 +18,6 @@ const server = http.createServer( function (request, response) {
 
 });
 
-server.listen(3000);
+console.log('port:', process.env.PORT);
+server.listen( process.env.PORT || 3000);
 console.log('Server stated!');

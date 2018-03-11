@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>proj1</title>
+    <link rel="stylesheet" href="styles.css" type="text/css">
+</head>
+<body>
+<!--
+<h1>Hello? mother fucker</h1>
+<p>First string!</p>
+-->
+
+<div id="application">
+    <h1>Hello</h1>
+
+    <nav id="navigation">
+    </nav>
+
+    <section id="login" hidden>
+        <h2>login</h2>
+        <form action="" id="login-form">
+            <input type="text" id="login-form-name" placeholder="your name"> <br/>
+            <input type="email" id="login-form-email" placeholder="email"> <br/>
+            <input type="submit" id="login-form-submit" value="send">
+        </form>
+    </section>
+
+    <section id="profile" hidden>
+        <h2>My name is <span>Andrey</span></h2>
+        <p>string</p>
+        <div id="emaildiv"></div>
+        <div id="usernamediv"></div>
+    </section>
+
+    <section id="about" hidden>
+        <h2>About me</h2>
+        <p>nothing to say</p>
+    </section>
+</div>
+
+<script src="main.js" ></script>
+<!--
+<script>
+    const sections = [
+        ['login', 'Login'],
+        ['profile', 'My profile'],
+        ['about', 'About']
+    ];
+
+    const application = document.querySelector('#application');
+    const nav = document.getElementById('navigation');
+
+    for (let section of sections) {
+        const newButton = document.createElement('input');
+        newButton.setAttribute('type', 'button');
+        newButton.setAttribute('data-section', section[0]);
+        newButton.value = section[1];
+        nav.appendChild(newButton);
+    }
+
+
+
+    const liveSectionsCollection = document.getElementsByTagName('section');
+    const liveSectionsArray = Array.from(liveSectionsCollection);
+    nav.addEventListener('click', function(event){
+        const sectionId = event.target.getAttribute('data-section');
+
+        console.log(sectionId);
+        liveSectionsArray.forEach( function(sectionElement) {
+            sectionElement.hidden = true;
+            if(sectionElement.id === sectionId) sectionElement.hidden = false;
+            console.log('yes');
+
+        });
+    });
+
+
+
+/* my buttons LI
+    const nav = document.getElementById('navigation');
+    const navList = document.createElement('ul');
+    nav.appendChild(navList);
+
+    for(i=0; i<sections.length; i++){
+        const newNavLink = document.createElement('li');
+        newNavLink.innerHTML = '<a href="#">'+ sections[i][1] +'</a>';
+        navList.appendChild(newNavLink);
+    }
+    */
+</script>
+-->
+
+</body>
+</html>

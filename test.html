@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <script src="test.js"></script>
+</head>
+<body>
+<h1>Ссылка: <a href="#">тут</a></h1>
+
+<div id="btn-group">
+    <input type="button" value="no1">
+    <input type="button" value="no2">
+    <input type="button" value="no3">
+</div>
+
+<script>
+
+    const btnElement = document.getElementsByTagName('input');
+    const btnGroup = document.getElementById('btn-group');
+    console.log(btnElement.length, btnGroup.innerHTML);
+
+
+for (i=0; i < btnElement.length; i++) {
+    btnElement[i].addEventListener('click', myOut);
+}
+
+    btnGroup.addEventListener('click', myOut);
+
+
+    function myOut (event){
+        console.log(event.currentTarget);
+    }
+
+</script>
+
+</body>
+</html>

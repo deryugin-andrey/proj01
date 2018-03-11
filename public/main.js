@@ -45,6 +45,7 @@ const liveSectionsCollection = document.getElementsByTagName('section');
 const liveSectionsArray = Array.from(liveSectionsCollection);
 const emaildiv = document.getElementById('emaildiv');
 const usernamediv = document.getElementById('usernamediv');
+const countdiv = document.getElementById('countdiv');
 
 nav.addEventListener('click', function(event){
 const sectionId = event.target.getAttribute('data-section');
@@ -56,10 +57,12 @@ const sectionId = event.target.getAttribute('data-section');
             }
             emaildiv.textContent = resp.email;
             usernamediv.textContent = resp.username;
-            sectionElement.hidden = false;
+            countdiv.textContent = resp.count;
 
+            //event.target.parentNode.hidden = false;
+            //sectionElement.hidden = false;
+            return;
         });
-        return;
     }
 
     console.log(sectionId);
@@ -92,11 +95,16 @@ function whoAmI(callback) {
     xhr.withCredentials = true;
     xhr.onreadystatechange = function (){
         if(xhr.readyState !== 4) return;
-        if(xhr.statusText !== 200) {
+
+        if(xhr.status !== 200) {
+            console.log('WhoAmI != 200', xhr);
             return callback(xhr);
         }
-        const response = JSON.parser(xhr.responseText);
-        callback(null, response);
+        console.log('WhoAmI == 200');
+        //const response = JSON.parser(xhr.responseText);
+        const response = JSON.parse(xhr.responseText);
+        return callback(null, response);
+
     };
     xhr.send();
 }
